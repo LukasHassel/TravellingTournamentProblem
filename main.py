@@ -142,7 +142,7 @@ def executeExperiment(exp:Experiment):
 def main():
     time = datetime.datetime.now()
     pool = ProcessPoolExecutor()
-    experiments = [Experiment(repetitions=1_000, nTeams=nTeams, timeCreated=time, maxStreak=maxStreak) for nTeams in range(4, 52, 2) for maxStreak in range(1, 6)]
+    experiments = [Experiment(repetitions=1_000, nTeams=nTeams, timeCreated=time, maxStreak=maxStreak) for nTeams in range(4, 52, 2) for maxStreak in range(1, 7)]
     experiments = pool.map(executeExperiment, experiments)
     pool.shutdown()
     
